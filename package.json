@@ -1,0 +1,82 @@
+{
+  "name": "@codewithraheem/launchkit",
+  "version": "0.1.0",
+  "description": "Inspect. Improve. Launch. — Lightweight, developer-friendly command-line project readiness auditor.",
+  "type": "module",
+  "bin": {
+    "launchkit": "./dist/cli.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codewithraheem/launchkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codewithraheem/launchkit/issues"
+  },
+  "homepage": "https://github.com/codewithraheem/launchkit#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepack": "npm run typecheck && npm run build"
+  },
+  "keywords": [
+    "launchkit",
+    "audit",
+    "readiness",
+    "cli",
+    "linter",
+    "project-audit",
+    "ci-cd",
+    "typescript",
+    "release-checklist",
+    "developer-tools",
+    "codewithraheem"
+  ],
+  "author": "CodeWithRaheem",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^15.0.0",
+    "kleur": "^4.1.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.5",
+    "@vitest/coverage-v8": "^5.0.5",
+    "eslint": "^10.13.0",
+    "prettier": "^3.9.10",
+    "tsup": "^9.0.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.2",
+    "vitest": "^5.0.5"
+  }
+}
